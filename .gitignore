@@ -1,0 +1,84 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# User data and credentials
+data/
+credentials.json
+**/credentials.json
+user_data.json
+**/user_data.json
+
+# Application logs
+logs/
+*.log
+
+# Playwright browser data
+.playwright-browsers/
+.auth/
+
+# Test files
+test-resumes/
+screenshots/
+videos/
+test-results/
+
+# Generated extension package
+extension.zip
+extension.crx
+extension.pem
+
+# OS specific files
+.DS_Store
+Thumbs.db
+.directory
+*.swp
+*.swo
+
+# Editor specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+*.iml
+.settings/
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+.temp/
+.cache/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Debug files
+debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+out/
+output/
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Miscellaneous
+.eslintcache
+.stylelintcache

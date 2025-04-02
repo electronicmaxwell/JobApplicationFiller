@@ -6,6 +6,7 @@ const path = require('path');
 const readline = require('readline');
 const ResumeParser = require('./resumeParser');
 const JobApplicationBot = require('./jobApplicationBot');
+const { importCVJsonCommand } = require('./cvUtils');
 
 // Create necessary directories
 const ensureDirectoryExists = (directory) => {
@@ -1686,3 +1687,26 @@ process.on('unhandledRejection', (reason, promise) => {
   log(`Unhandled Rejection: ${reason}`);
   process.exit(1);
 });
+
+program
+  .command('import-cv-json')
+  .description('Import a CV from a JSON file in the application-specific format')
+  .argument('<file-path>', 'Path to the JSON file containing the CV data')
+  .action(importCVJsonCommand);
+
+program
+  .command('generate-template')
+  .description('Generate an empty CV JSON template')
+  .option('-o, --output <file-path>', 'Output file path', 'cv-template.json')
+  .action((options) => {
+    const templateJson = {
+      // Template contents (same as the template artifact)
+      "resume_path": "",
+      "cover_letter_path": "",
+      "transcript_path": "",
+      // ... rest of template
+    };
+    
+    fs.writeFileSync(options.output, JSON.stringify(templateJson, null, 2));
+    console.log(`Template CV JSON generated at: ${options.output}`);
+  });

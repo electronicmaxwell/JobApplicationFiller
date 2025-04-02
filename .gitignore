@@ -82,3 +82,5 @@ coverage/
 # Miscellaneous
 .eslintcache
 .stylelintcache
+
+maxwell-cv.json

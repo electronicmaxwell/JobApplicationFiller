@@ -297,6 +297,9 @@ class ResumeParser {
   }
 
   identifyMissingFields() {
+    // Convert the extracted text to a string for checking
+    const resumeText = JSON.stringify(this.userData).toLowerCase();
+    
     // Check personal information
     for (const [key, value] of Object.entries(this.userData.personalInfo)) {
       if (!value) {
@@ -340,12 +343,12 @@ class ResumeParser {
     this.missingFields.push('references'); // References are usually not included in resumes
     
     // Check for citizenship/work authorization status
-    if (!text.match(/(?:citizen|permanent resident|work authorization|visa)/i)) {
+    if (!resumeText.match(/(?:citizen|permanent resident|work authorization|visa)/i)) {
       this.missingFields.push('workAuthorizationStatus');
     }
     
     // Check for social media profiles
-    if (!text.match(/(?:linkedin|github|twitter|facebook|instagram)/i)) {
+    if (!resumeText.match(/(?:linkedin|github|twitter|facebook|instagram)/i)) {
       this.missingFields.push('socialMediaProfiles');
     }
   }

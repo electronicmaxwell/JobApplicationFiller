@@ -1,0 +1,34 @@
+{
+  "name": "job-application-automation",
+  "version": "1.0.0",
+  "description": "Automated job application system with resume parsing and web automation",
+  "main": "index.js",
+  "bin": {
+    "job-apply": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "job",
+    "application",
+    "automation",
+    "resume",
+    "parsing",
+    "web",
+    "scraping"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^9.4.0",
+    "mammoth": "^1.4.21",
+    "natural": "^5.2.3",
+    "pdf-parse": "^1.1.1",
+    "playwright": "^1.28.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
